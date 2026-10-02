@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.5)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -18,9 +18,14 @@ else()
 endif()
 
 
+# Ensure raylib is built as static libraries
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build Raylib as static libraries" FORCE)
+
 
 project(mygame)
 
+# Add raylib
+add_subdirectory(thirdparty/raylib-5.0)
 
 
 # MY_SOURCES is defined to be a list of all the source files for my game 
@@ -76,6 +81,7 @@ endif()
 
 target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
-
+# Link raylib library statically
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static)
 
 
