@@ -27,7 +27,7 @@ project(mygame)
 # Add thirdparty libraries
 add_subdirectory(thirdparty/raylib-5.0)
 add_subdirectory(thirdparty/imgui-docking)
-add_subdirectory(thirdparty/rlimgui)
+add_subdirectory(thirdparty/rlImGui)
 
 # MY_SOURCES is defined to be a list of all the source files for my game 
 # DON'T ADD THE SOURCES BY HAND, they are already added with this macro
